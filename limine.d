@@ -1,5 +1,13 @@
 module limine;
 
+template BaseRevision(const char[] N) {
+    const char[] BaseRevision = "__gshared ulong[3] limine_base_revision = [ 0xf9562b2d5c95a6c8, 0x6a7b384944536bdc, " ~ N ~ "];";
+}
+
+template BaseRevisionSupported() {
+    const char[] BaseRevisionSupported = "(limine_base_revision[2] == 0)";
+}
+
 template CommonMagic() {
     const char[] CommonMagic = "\"0xc7b1dd30df4c8b88, 0x0a82e883a194f07b\"";
 }
